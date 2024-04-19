@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <title>Accueil</title>
+    </head>
+    <body>
+        {% extends "base.html" %}
+        {% block title %}Mon Examen{% endblock %}
+        {%block content%}
+        <h2>Page d'Accueil</h2>
+        <p>Ceci est la page d'accueil de notre application. </p>
+        <p>Vous pouvez vous inscrire ou vous connecter pour accéder aux cours d'isponibles.</p>
+        <p>Merci!</p>
+        <p><a href="/profile" ><i class="fas fa-user"></i> Mon compte</a></p>
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body{
+            color: black;
+        }
+        footer{
+            color: #fff;
+            padding: 9px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block title %}Mon Examen{% endblock %}
+    {%block content%}
+    <ul>
+        <li>
+            <a href="{{url_for('info')}}"><i class="fas fa-info"></i> A propos</a>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <a href="{{url_for('contact')}}"><i class="fas fa-headset"></i> Contactez-nous</a>
+        </li>
+     </ul>
+    <ul>
+        <li>
+            <a href="{{url_for('about')}}"><i class="fas fa-star"></i>Laissez votre avis</a>
+        </li>
+    </ul>
+    {% endblock %}
+    <footer>
+        <p>&copy; 2024 Application Cours. Tous droits réservés.&copysr; Mon Examen.</p>
+        <li>République De Guinée</li>
+        <p>Application de cours </p>
+        <p>Avec nos Proffesseurs connu et reconnu</p>
+        <p>Contactez-nous :</p>
+        <p> Téléphone : <a href="tel:+224624366064"> <i class="fas fa-phone"></i> +224624366064 </a> </p>
+        <p>E-mail : <a href="mailto:alhassangsdiallo@gmail.com"><i class="fas fa-envelope"></i> alhassangsdiallo@gmail.com</a></p>
+        <p>WhatsApp :<a href="https://wa.me/224624366064?text=Bonjour%20!"><i class="fab fa-whatsapp"></i> +224624366064</a> </p>
+        <p>&copy; 2024</p>
+    </footer>
+</body>
+</html>

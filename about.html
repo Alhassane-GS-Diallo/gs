@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note L'application</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #rating-section {
+            margin: 50px auto;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        #rating-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #rating-form label {
+            margin-bottom: 10px;
+        }
+
+        #rating-form .rating-stars {
+            margin-bottom: 20px;
+        }
+
+        #rating-form .rating-star {
+            font-size: 36px;
+            color: #ccc;
+            cursor: pointer;
+        }
+
+        #rating-form .rating-star:hover,
+        #rating-form .rating-star.checked {
+            color: #FFD700; /* Couleur jaune pour les étoiles sélectionnées */
+        }
+
+        #rating-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #rating-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <section id="rating-section">
+        <h3>Noter l'application</h3>
+        <form id="rating-form" action="/sbmit_rating" method="post">
+            <label for="rating">Votre Note :</label>
+            <div class="rating-stars">
+                <span class="rating-star" data-value="1">&#9733;</span>
+                <span class="rating-star" data-value="2">&#9733;</span>
+                <span class="rating-star" data-value="3">&#9733;</span>
+                <span class="rating-star" data-value="4">&#9733;</span>
+                <span class="rating-star" data-value="5">&#9733;</span>
+            </div>
+            <input type="hidden" id="rating" name="rating" value="0">
+            <label for="comment">Commentaire :</label>
+            <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+            <button type="submit">Somettre</button>
+        </form>
+    </section>
+    <script>
+     const stars = document.querySelectorAll('.rating-star');
+
+     stars.forEach(star => {
+            star.addEventListener('click', () => {
+                const value = parseInt(star.getAttribute('data-value'));
+                document.getElementById('rating').value = value;
+
+                stars.forEach(s => {
+                    if (parseInt(s.getAttribute('data-value')) <= value) {
+                        s.classList.add('checked');
+                    } else {
+                        s.classList.remove('checked');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
